@@ -1,0 +1,14 @@
+<script src="node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+
+<script>
+	var socket=io('http://localhost:6969')
+	socket.on('msg',function(data){
+		console.log(data)
+	})
+	
+	socket.emit("","This message from client")
+	
+	socket.on('deviceId',function(data){
+		console.log(data)
+	})
+</script>
